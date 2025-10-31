@@ -1,14 +1,19 @@
-// eslint-disable-next-line no-unused-vars
-/* global output, input */
-// eslint-disable-next-line no-unused-vars
 async function main() {
-  // This is where the code you're actually experimenting with goes.
+   //Collect user's name and concatenate it
+   let firstName = await input("What is your first name? ");
+   let lastName = await input("What is your last name? ");
+   let fullName = firstName + " " + lastName;
+   
+  //Replace all instances of letter a with letter o and display the name
+  let newName = fullName.replaceAll("a", "o");
+  output(newName);
 
-  const prompt = "Please enter your name, or 'Exit' to quit: ";
-  let name = await input(prompt);
+  //Collect numbers from user
+  let largerNumber = await input("Please enter a number larger than 10: ");
+  let smallerNumber = await input("Please enter a number smaller than 10: ");
 
-  while (name !== "Exit") {
-    output("Hello, " + name + "!");
-    name = await input(prompt);
-  }
+  //Calculate remainder and display results
+  let remainder = largerNumber % smallerNumber;
+  output(remainder);
+
 }
